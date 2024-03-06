@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -18,13 +23,232 @@ code {
 
 
 .top--navbar--container{
-
-  height: 50px;
+  height: 100px;
+  position: fixed;
+  top:0;
+  left: 0;
   width: 100%;
-  background-color: blanchedalmond;
+  /* background-image: linear-gradient(to left, #3c3e3e, #373a3a, #333636, #2e3232, #2a2e2e); */
+  display: flex;
+  padding: 0px 100px 0px 50px;
+}
 
+.top--navbar--menu{
+  display: flex;
+  margin-left: auto;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+
+.top--navbar--menu a{
+  font-weight: 600;
+  color:#eee;
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+.top--navbar--menu li{
+  width: fit-content;
+  list-style-type: none;
+  padding: 0px 10px;
+}
+
+.top--navbar--menu a:hover{
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-stretch: extra-expanded;
+}
+
+.top--navbar--menu li:hover{
+  font-stretch: extra-expanded;
+}
+
+
+/* END OF NAVBAR STYLES  */
+
+
+
+/* START OF MOVABLE ELEMENT STYLES  */
+
+ 
+.element {
+  width: 100px;
+  height: 100px;
+}
+
+.one {
+  background-color: yellow;
+  top: 10%;
+  right: 40%;
+}
+
+.two {
+  background-color: orange;
+  top: 35%;
+  right: 20%;
+}
+
+.three {
+  background-color: red;
+  top: 45%;
+  left: 10%;
+}
+
+
+/* END OF  MOVABLE ELEMENT STYLES    */
+
+
+
+
+/* START OF  HOME PAGE STYLE  */
+
+
+.home-page--outer--container{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* background-image: linear-gradient(to left bottom, #696e6e, #585d5d, #484d4d, #393d3d, #2a2e2e); */
+  /* background-image: linear-gradient(to right top, #141314, #1f1f1f, #2b2a2b, #373637, #434344, #454647, #484a4a, #4b4d4d, #444746, #3e4040, #373a39, #313433); */
+  background-image: linear-gradient(to right top, #232323, #232323, #222322, #222222, #222222, #222222, #222222, #222222, #222222, #222222, #222222, #222222);
+}
+
+.home-page--intro{
+  padding: 70px 10px 70px 10px ;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction:row-reverse;
+
+}
+
+.home-page--intro h1{
+font-family: "Kode Mono", monospace;
+font-optical-sizing: auto;
+font-weight: 800;
+font-style: normal;
+font-size: 150px;
+text-align: start;
+/* background-color: aliceblue; */
+width: fit-content;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+line-height: 130px;
+}
+
+.home-page--intro h6{
+padding-left: 10px;
+font-family: "Kode Mono", monospace;
+font-optical-sizing: auto;
+font-weight: 800;
+font-style: normal;
+font-size: 20px;
+text-align: start;
+width: fit-content;
+line-height: 13px;
+animation-name: xtream-hompeage-intro-animation;
+animation-duration: 2s;
+overflow: hidden;
+word-break: keep-all;
+white-space: nowrap;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+
+.xtream-hompeage-intro-animation{
+  animation-name: xtream-hompeage-intro-animation;
+  animation-duration: 2s;
+  /* animation-iteration-count: infinite; */
+  width: 0px;
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+@keyframes xtream-hompeage-intro-animation {
+  
+  0% {
+    width: 0px;
+  }
+  
+  45% {
+    width: 350px;
+  }
+  50% {
+  
+    width:340px;
+  }
+  100% {
+    width: 500px;  
+  }
+  
+}
+
+
+.home-page--wallpaper{
+  height: 650px;
+  width: 120%;
+  background-image: url('../public/assets/img/homepage/wallpaperflare.com_wallpaper\ \(6\).jpg');
+  background-position: center;
+  margin-top: -80px;
+  margin-right: -20px;
+  background-size: cover;
+  opacity: 0.5;
 }
 
 
 
-/* END OF NAVBAR STYLES  */
+.home-page-arrows {
+  width: 90px;
+  height: 62px;
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 20px;
+}
+
+.home-page-arrows path {
+  stroke: #ffffff;
+  fill: transparent;
+  stroke-width: 1px;  
+  animation: arrow 2s infinite;
+  -webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.home-page-arrows path.a1 {
+  animation-delay:-1s;
+  -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.home-page-arrows path.a2 {
+  animation-delay:-0.5s;
+  -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.home-page-arrows path.a3 { 
+  animation-delay:0s;
+  -webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
+
+/* END OF HOMEPAGE STYLE  */

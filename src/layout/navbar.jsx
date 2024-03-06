@@ -13,19 +13,23 @@ const Navbar = () => {
         
         <div className="top--navbar--container">
 
-            <div className="top--navbar--logo">X Movies</div>
+            <div className="top--navbar--logo"><img src="/assets/img/Frame 1.png" alt="logo" height={100} width={100} /></div>
 
                 <div className="top--navbar--menu">
 
-                <Link>Home</Link>    
+                <li> <Link>Home</Link></li>    
 
-                <Link>Movies</Link>    
 
-                <Link>Series/TV</Link>    
+                <li> <Link>Movie</Link></li>    
 
-                <Link>Home</Link>    
 
-                <Link>Home</Link>    
+                <li> <Link>TV / Series</Link></li>    
+
+
+                <li> <Link>Animation</Link></li>    
+
+
+                <li> <Link>Home</Link></li>    
 
 
                 </div>

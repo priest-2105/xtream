@@ -38,7 +38,6 @@ const Home = () => {
 
   const toggleMovieList = () => {
     setShowMovieList(!showMovieList);
-    // toggleMovieList();
   };
 
     return (
@@ -97,8 +96,8 @@ const Home = () => {
                 <Navbar/>
                   
                 <div className={`movie-list-outer-container ${showMovieList ? 'show' : ''}`}>
-                <button type="button" className='close-movie-list-button' onClick={toggleMovieList}>button</button>
-                  <MovieList showMovieList={showMovieList} />
+               
+                  <MovieList showMovieList={showMovieList} toggleMovieList={toggleMovieList}  />
                 </div>
 
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import SimilarMovieList from './similarmovies';
 
 const MovieDetails = () => {
 
@@ -173,6 +174,17 @@ const decideTextColor = (rgb) => {
 
        </div>
      
+       </div>
+
+
+
+
+
+
+
+
+       <div>
+        <SimilarMovieList textColor={textColor} backgroundGradient={backgroundGradient}/>
        </div>
 
 

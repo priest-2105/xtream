@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import SimilarMovieList from './similarmovies';
+import MoviePlayer from './movieplayer';
 
 const MovieDetails = () => {
 
@@ -9,7 +10,8 @@ const MovieDetails = () => {
   const imageSrc = '/assets/img/movieposters/Movie Poster 100.jpg';
   const imgRef = useRef();
   const [textColor, setTextColor] = useState('#000'); 
-
+  const [isMoviePlayerOpen, setIsMoviePlayerOpen] = useState(false);
+  
 
 
   useEffect(() => {
@@ -83,11 +85,24 @@ const decideTextColor = (rgb) => {
   const dynamicTextColor = decideTextColor([centerPixel[0], centerPixel[1], centerPixel[2]]);
   setTextColor(dynamicTextColor);
 };
-  
 
+
+  
+  const togglemovieplayer = () => {
+    setIsMoviePlayerOpen(prevState => {
+      if (prevState) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+  }
+  
  
   return (
     <>
+    <div>{isMoviePlayerOpen &&<MoviePlayer togglemovieplayer={isMoviePlayerOpen} />}</div>
+
     <div className="movie-details-container">
 
     <div className="movie-container-inner">
@@ -103,7 +118,7 @@ const decideTextColor = (rgb) => {
               <img ref={imgRef} src={imageSrc} alt="Movie title"/>
               </div>
            <div className="small-width-movie-details-image-poster-title-container">
-            <button>{/* <span> Watch Now </span> */} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg> </button>
+            <button onClick={togglemovieplayer}> {/* <span> Watch Now </span> */} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg> </button>
 
           <h2><TypeAnimation sequence={['STARWARS: LEGACY',2000, ]} cursor={false} speed={50} repeat={1}
               /></h2> 

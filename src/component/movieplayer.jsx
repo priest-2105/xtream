@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react';
 
 const MoviePlayer = () => {
 
@@ -15,7 +15,7 @@ const MoviePlayer = () => {
 
 return (
   <div className="video-container">
-    <video ref={videoRef} src={src} className="video-player"></video>
+    <video ref={videoRef} src={videosrc} className="video-player"></video>
     <button onClick={togglePlay} className="play-pause-btn">Play/Pause</button>
   </div>
 );

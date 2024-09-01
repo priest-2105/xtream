@@ -11,16 +11,16 @@ function createMovieCard(movie) {
     const card = document.createElement('div');
     card.classList.add('movie-card');
     card.innerHTML = `
-        <img src="${IMGPATH + movie.poster_path}" alt="${movie.title}">
-        <div class="movie-card-details">
-            <p>${movie.title}</p>
-            <p>${movie.vote_average} ⭐</p>
+        <img src="${movie.poster_path ? IMGPATH + movie.poster_path : '/api/placeholder/200/300'}" alt="${movie.title}">
+        <div class="movie-info">
+            <h3>${movie.title}</h3>
+            <span>${movie.vote_average?.toFixed(1) || 'N/A'}</span>
         </div>
     `;
     // Add click event to the card
     card.addEventListener('click', () => {
-        localStorage.setItem('selectedMovieId', movie.id); // Store movie ID in localStorage
-        window.location.href = 'moviedetails.html'; // Redirect to movie details page
+        localStorage.setItem('selectedMovieId', movie.id);  
+        window.location.href = 'moviedetails.html'; 
     });
     return card;
 }
@@ -114,7 +114,7 @@ async function initializeCarousels() {
     
     // Featured Movies Carousel
     const featuredCards = document.querySelector('.featured-movies .movie-cards');
-    movies.slice(0, 10).forEach(movie => {
+    movies.slice(0, 6).forEach(movie => {
         featuredCards.appendChild(createMovieCard(movie));
     });
 
@@ -147,10 +147,7 @@ function handleCarousel() {
     const nextButton = document.querySelector('.featured-movies .carousel-control.next');
     let currentIndex = 0;
 
-    function updateCarousel() {
-        const cardWidth = cards.querySelector('.movie-card').offsetWidth + 20; // +20 for gap
-        cards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
+    n
 
     nextButton.addEventListener('click', () => {
         if (currentIndex < cards.children.length - 5) {
@@ -177,7 +174,7 @@ function handleTopMoviesCarousel() {
         items[currentSlide].classList.add('active');
     }
 
-    setInterval(() => changeSlide(1), 5000); // Auto-advance every 5 seconds
+    setInterval(() => changeSlide(1), 5000); 
 }
 
 function handleLoadMore() {

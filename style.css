@@ -1,35 +1,77 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-}li, a, span, p {
+li, a, span, p {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
-}.navbar {
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #181616d5;
-}.logo {
+    background-color: #222;
+    padding: 10px 20px;
+}
+
+.logo {
     font-size: 24px;
     font-weight: bold;
-}.nav-links {
+    color: #f4c10f;
+}
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-}.nav-links li a {
+}
+
+.nav-links li a {
     text-decoration: none;
     color: #fff;
-}.nav-icons {
-    display: flex;
-    gap: 20px;
-}.hero {
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f4c10f;
+}
+
+.nav-search input {
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.nav-search input:focus {
+    width: 250px;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+
+.hero {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -208,36 +250,64 @@ body {
     display: flex;
     gap: 20px;
     transition: transform 0.3s ease-in-out;
-}.movie-card {
-    background-image: url('https://wordpress.iqonic.design/product/wp/streamit/wp-content/uploads/2023/10/ott1.webp');
-    position: relative;
-    min-width: 250px;
-    height: 350px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #222;
+}
+.movie-card {
+    background-color: #333;
     border-radius: 10px;
     overflow: hidden;
-}.movie-card .movie-card-details {
-    bottom: 20px;
-    left: 20px;
-    display: block;
-    position: absolute;
-}.movie-card .movie-card-details p:nth-child(1) {
-    margin-top: -5px;
-    font-weight: 800;
-    color: #ffffff;
-}.movie-card .movie-card-details p:nth-child(2) {
-    margin-top: -10px;
-    font-weight: 500;
-    font-size: 12px;
-    color: #ffffff;
-}.movie-card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card img {
     width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f4c10f;
+}
+
+.movie-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #f4c10f;
+}
+
+.movie-card span {
+    background-color: #f4c10f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #222;
+}
+
+/* Hover Effects */
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Styling */
+#load-more {
     display: block;
-    border-radius: 10px;
-}.carousel-control {
+    margin: 20px auto;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f4c10f;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#load-more:hover {
+    background-color: #d39e00;
+}
+.carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -347,93 +417,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: #f0f0f0;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e1e1e;
-    padding: 20px;
-}
-
-.navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.navbar .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.navbar .nav-links a:hover {
-    color: #ff6b6b;
-}
-
-.hero {
-    position: relative;
-    height: 60vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
 .hero-content {
     position: absolute;
     z-index: 2;
@@ -483,122 +466,4 @@ body {
 
 .hero-carousel-control.next {
     right: 20px;
-}
-
-/* Featured Movies Section */
-.featured-movies {
-    padding: 40px 20px;
-    background-color: #1e1e1e;
-}
-
-.featured-movies h2 {
-    margin-bottom: 20px;
-}
-
-.movie-card-slider {
-    display: flex;
-    align-items: center;
-}
-
-.carousel-control {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-}
-
-.movie-cards {
-    display: flex;
-    overflow: hidden;
-}
-
-.movie-card {
-    background-color: #2a2a2a;
-    margin: 0 10px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.movie-card img {
-    width: 100%;
-    display: block;
-}
-
-.movie-card-details {
-    padding: 10px;
-    text-align: center;
-}
-
-.movie-card-details p {
-    margin: 5px 0;
-}
-
-.movie-card:hover {
-    transform: scale(1.05);
-}
-
-/* Top Movies Section */
-.top-movies {
-    padding: 40px 20px;
-}
-
-.top-movies h2 {
-    margin-bottom: 20px;
-}
-
-.carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-}
-
-.carousel-item {
-    min-width: 20%;
-    transition: transform 0.3s ease;
-}
-
-.carousel-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.carousel-caption {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-/* More Movies Section */
-.more-movies {
-    padding: 40px 20px;
-    background-color: #1e1e1e;
-}
-
-.more-movies h2 {
-    margin-bottom: 20px;
-}
-
-.movie-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-#load-more {
-    background-color: #ff6b6b;
-    border: none;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#load-more:hover {
-    background-color: #ff4747;
 }

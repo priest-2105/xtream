@@ -343,3 +343,262 @@ body {
 .featured-movies h2 , .more-movies h2{
     margin-left: 50px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #ff6b6b;
+}
+
+.hero {
+    position: relative;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 2;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    text-align: center;
+}
+
+.hero-carousel {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.hero-carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.hero-carousel-item {
+    min-width: 100%;
+    transition: opacity 1s;
+}
+
+.hero-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hero-carousel-control.prev {
+    left: 20px;
+}
+
+.hero-carousel-control.next {
+    right: 20px;
+}
+
+/* Featured Movies Section */
+.featured-movies {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+}
+
+.featured-movies h2 {
+    margin-bottom: 20px;
+}
+
+.movie-card-slider {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-control {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.movie-cards {
+    display: flex;
+    overflow: hidden;
+}
+
+.movie-card {
+    background-color: #2a2a2a;
+    margin: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.movie-card img {
+    width: 100%;
+    display: block;
+}
+
+.movie-card-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-card-details p {
+    margin: 5px 0;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+/* Top Movies Section */
+.top-movies {
+    padding: 40px 20px;
+}
+
+.top-movies h2 {
+    margin-bottom: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-item {
+    min-width: 20%;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* More Movies Section */
+.more-movies {
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+}
+
+.more-movies h2 {
+    margin-bottom: 20px;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#load-more {
+    background-color: #ff6b6b;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#load-more:hover {
+    background-color: #ff4747;
+}

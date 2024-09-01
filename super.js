@@ -17,8 +17,14 @@ function createMovieCard(movie) {
             <p>${movie.vote_average} ⭐</p>
         </div>
     `;
+    // Add click event to the card
+    card.addEventListener('click', () => {
+        localStorage.setItem('selectedMovieId', movie.id); // Store movie ID in localStorage
+        window.location.href = 'moviedetails.html'; // Redirect to movie details page
+    });
     return card;
 }
+
 
 async function initializeHeroCarousel() {
     const movies = await getMovies();

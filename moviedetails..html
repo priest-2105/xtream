@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xtream - Movie Details</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/0fcc8b9f34.js" crossorigin="anonymous"></script>
+    <style>
+        .movie-details {
+            color: #fff;
+            padding: 2rem;
+            background-color: #141414;
+        }
+        .movie-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+        .movie-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .movie-rating {
+            font-size: 1.2rem;
+            color: #ffd700;
+        }
+        .movie-info {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .movie-genres {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .genre {
+            background-color: #333;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        .movie-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .action-button {
+            background-color: #e50914;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .movie-description {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .trailer {
+            width: 100%;
+            max-width: 560px;
+            margin-bottom: 2rem;
+        }
+        .recommended {
+            margin-top: 2rem;
+        }
+        .recommended h3 {
+            margin-bottom: 1rem;
+        }
+        .recommended-movies {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+        .recommended-movie {
+            flex: 0 0 auto;
+            width: 200px;
+        }
+        .recommended-movie img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Xtream</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li> 
+                <li><a href="movies.html">Movies</a></li>
+            </ul>
+            <div class="nav-search">
+                <!-- Add search functionality if needed -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="movie-details">
+        <div class="movie-header">
+            <div>
+                <h1 class="movie-title">THE MANDALORIAN</h1>
+                <div class="movie-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span>4.5</span>
+                    <span>IMDb</span>
+                </div>
+            </div>
+            <div class="trailer">
+                <img src="/api/placeholder/560/315" alt="Trailer placeholder">
+                <div>Trailer Link</div>
+            </div>
+        </div>
+
+        <div class="movie-info">
+            <span>2 Hr : 14 Mins</span>
+            <span>Nov 2019</span>
+            <span>13.8K views</span>
+        </div>
+
+        <div class="movie-genres">
+            <span class="genre">Action</span>
+            <span class="genre">Adventure</span>
+            <span class="genre">Sci-Fi</span>
+        </div>
+
+        <div class="movie-actions">
+            <button class="action-button"><i class="fas fa-share"></i></button>
+            <button class="action-button"><i class="fas fa-heart"></i></button>
+            <button class="action-button"><i class="fas fa-plus"></i></button>
+            <button class="action-button"><i class="fas fa-download"></i></button>
+            <button class="action-button">+ Playlist</button>
+        </div>
+
+        <div class="movie-description">
+            <p>After the fall of the Galactic Empire, a lone gunfighter makes his way through the outer reaches of the lawless galaxy. The show follows the adventures of a lone Mandalorian bounty hunter, Din Djarin, as he navigates the outer reaches of the galaxy, far from the authority of the New Republic.</p>
+        </div>
+
+        <div class="recommended">
+            <h3>Recommended</h3>
+            <div class="recommended-movies">
+                <div class="recommended-movie">
+                    <img src="/api/placeholder/200/300" alt="Recommended movie 1">
+                </div>
+                <div class="recommended-movie">
+                    <img src="/api/placeholder/200/300" alt="Recommended movie 2">
+                </div>
+                <div class="recommended-movie">
+                    <img src="/api/placeholder/200/300" alt="Recommended movie 3">
+                </div>
+                <div class="recommended-movie">
+                    <img src="/api/placeholder/200/300" alt="Recommended movie 4">
+                </div>
+                <div class="recommended-movie">
+                    <img src="/api/placeholder/200/300" alt="Recommended movie 5">
+                </div>
+                <div class="recommended-movie">
+                    <img src="/api/placeholder/200/300" alt="Recommended movie 6">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://kit.fontawesome.com/0fcc8b9f34.js" crossorigin="anonymous"></script>
+    <script src="./movie-details.js"></script>
+</body>
+</html>

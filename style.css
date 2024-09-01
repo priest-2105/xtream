@@ -1,53 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
-/* Global Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #111;
     color: #fff;
-}
-
-li, a, span, p {
+}li, a, span, p {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-style: normal;
-}
-
-/* Navigation Bar */
-.navbar {
+}.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: #181616d5;
-}
-
-.logo {
+}.logo {
     font-size: 24px;
     font-weight: bold;
-}
-
-.nav-links {
+}.nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-}
-
-.nav-links li a {
+}.nav-links li a {
     text-decoration: none;
     color: #fff;
-}
-
-.nav-icons {
+}.nav-icons {
     display: flex;
     gap: 20px;
-}
-
-/* Hero Section */
-.hero {
+}.hero {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -57,27 +39,15 @@ li, a, span, p {
     background-size: cover;
     background-position: center;
     transition: background-image 0.5s ease-in-out;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
+    background: url('images/checked.png'), rgba(0, 0, 0, 0.5);
+} 
+/* 
 .hero-content {
     position: relative;
     z-index: 2;
     color: #fff;
     max-width: 50%;
-}
-
-.hero-content .pg {
+}.hero-content .pg {
     font-size: 14px;
     font-weight: 900;
     color: #212529;
@@ -86,25 +56,83 @@ li, a, span, p {
     width: fit-content;   
 }
 
+
+ */
+
+.hero-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-carousel-items {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hero-carousel-item.active {
+    opacity: 1;
+}
+
+.hero-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hero-carousel-control.prev {
+    left: 10px;
+}
+
+.hero-carousel-control.next {
+    right: 10px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+
 .top-hero-content {
     display: flex;    
     height: fit-content;
     align-items: center;
     padding: 10px 0;
 }
-
 .hero-content ul {
     display: flex;
     height: fit-content;
     list-style-type: disc;
 }
-
-.hero-content li {
-    margin-right: 30px;
-}
-
+.hero-content li {margin-right: 30px;}
 .hero-content li::marker { color: red; }
-
 .hero-content h1 {
     font-size: 48px;
     margin-bottom: 20px;
@@ -115,108 +143,72 @@ li, a, span, p {
     color: transparent;
     -webkit-background-clip: text;  
     -webkit-text-fill-color: transparent;  
-}
-
-.hero-content p {
+}.hero-content p {
     font-size: 18px;
     margin-bottom: 20px;
-}
-
-.hero-rating {
+}.hero-rating {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
-}
-
-.hero-rating .rating {
+}.hero-rating .rating {
     font-size: 24px;
     font-weight: bold;
     color: #ffd700;
-}
-
-.hero-rating .stars {
+}.hero-rating .stars {
     font-size: 15px;
     display: flex;
     font-weight: bold;
     color: #ffd700;
-}
-
-.hero-rating .stars span {
+}.hero-rating .stars span {
     color: #ffd700;
     margin-right: 0;
-}
-
-.hero-rating span {
+}.hero-rating span {
     color: #D1D0CF;
     font-size: 0.875rem;
     margin-right: 20px;
 }
-
 .hero-rating span b {
     color: #e50914;
-}
-
-.cast {
+}.cast {
     display: flex;
     align-items: center;
-}
-
-.cast span {
+}.cast span {
     margin-left: 10px;
     margin-top: -5px;
     font-size: 15px;
     display: flex;
-}
-
-.cast span::after {
+}.cast span::after {
     content: ',';
-}
-
-.cast p {
+}.cast p {
     font-weight: bold;
     line-height: normal;
     color: #e50914 !important;
-}
-
-.hero-image img {
+}.hero-image img {
     width: 100%;
     max-width: 400px;
     border-radius: 10px;
-}
-
-.btn {
+}.btn {
     display: inline-block;
     padding: 20px 40px;
     background-color: #e50914;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-}
-
-.btn .fa-play {
+}.btn .fa-play {
     margin-left: 10px;
-}
-
-/* Card Slider */
-.movie-card-slider {
+}.movie-card-slider {
     position: relative;
     padding: 20px 50px;
     overflow: hidden;
     max-width: 100%;
-}
-
-.movie-cards-container {
+}.movie-cards-container {
     overflow: hidden;
-}
-
-.movie-cards {
+}.movie-cards {
     display: flex;
     gap: 20px;
     transition: transform 0.3s ease-in-out;
-}
-
-.movie-card {
+}.movie-card {
     background-image: url('https://wordpress.iqonic.design/product/wp/streamit/wp-content/uploads/2023/10/ott1.webp');
     position: relative;
     min-width: 250px;
@@ -227,36 +219,25 @@ li, a, span, p {
     background-color: #222;
     border-radius: 10px;
     overflow: hidden;
-}
-
-.movie-card .movie-card-details {
+}.movie-card .movie-card-details {
     bottom: 20px;
     left: 20px;
     display: block;
     position: absolute;
-}
-
-.movie-card .movie-card-details p:nth-child(1) {
+}.movie-card .movie-card-details p:nth-child(1) {
     margin-top: -5px;
     font-weight: 800;
     color: #ffffff;
-}
-
-.movie-card .movie-card-details p:nth-child(2) {
+}.movie-card .movie-card-details p:nth-child(2) {
     margin-top: -10px;
     font-weight: 500;
     font-size: 12px;
     color: #ffffff;
-}
-
-.movie-card img {
+}.movie-card img {
     width: 100%;
     display: block;
     border-radius: 10px;
-}
-
-/* Carousel Controls */
-.carousel-control {
+}.carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -268,25 +249,16 @@ li, a, span, p {
     z-index: 5;
     font-size: 24px;
     border-radius: 50%;
-}
-
-.carousel-control.prev {
+}.carousel-control.prev {
     left: 0;
-}
-
-.carousel-control.next {
+}.carousel-control.next {
     right: 0;
-}
-
-/* Top Movies Carousel */
-.carousel {
+}.carousel {
     position: relative;
     width: 100%;
     height: 400px;
     overflow: hidden;
-}
-
-.carousel-item {
+}.carousel-item {
     position: absolute;
     top: 0;
     left: 0;
@@ -294,19 +266,13 @@ li, a, span, p {
     height: 100%;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-item.active {
+}.carousel-item.active {
     opacity: 1;
-}
-
-.carousel-item img {
+}.carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.carousel-caption {
+}.carousel-caption {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -314,26 +280,19 @@ li, a, span, p {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
-}
-
-.carousel-nav {
+}.carousel-nav {
     position: absolute;
     top: 50%;
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-
-.carousel-nav button {
+}.carousel-nav button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
-}
-
-/* Movie Grid */
-.movie-grid {
+}.movie-grid {
     display: flex;
     flex-wrap: wrap;
     /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); */
@@ -341,7 +300,6 @@ li, a, span, p {
     margin-top: 20px;
     width: fit-content;
 }
-
 .movie-grid .movie-card {
     background-color: #222;
     border-radius: 5px;
@@ -352,7 +310,6 @@ li, a, span, p {
     transition-timing-function: ease-in-out;
     transform: scale(1,1);
 }
-
 .movie-grid .movie-card:hover {
     transition-duration: 50ms;
     cursor: pointer;
@@ -360,24 +317,19 @@ li, a, span, p {
     transform: scale(1.2,1.2);
     background: rgba(0, 0, 0, 0.2);
 }
-
 .movie-grid .movie-card:hover img {
     object-fit:calc(200px - 200px);
 }
-
-
 .movie-grid .movie-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
-
 .movie-grid .movie-card h3 {
     padding: 10px;
     margin: 0;
     color: #fff;
 }
-
 #load-more {
     display: block;
     margin: 20px auto;
@@ -387,4 +339,7 @@ li, a, span, p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+.featured-movies h2 , .more-movies h2{
+    margin-left: 50px;
 }

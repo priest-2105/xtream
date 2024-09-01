@@ -1,2 +1,170 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+
+li , a , span {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #181616d5;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 100vh;
+    background-image: url('https://wordpress.iqonic.design/product/wp/streamit/wp-content/uploads/2023/10/ott1.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity to make it darker or lighter */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+    color: #fff; /* Ensure text is visible against the dark overlay */
+    max-width: 50%;
+}
+
+.hero-content ul{
+    display: flex;
+    height: fit-content;
+    list-style-type: style disc;
+}
+
+.hero-content li{
+    margin-right: 30px;
+}
+
+
+.hero-content li::marker { color: red; }
+
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.hero-rating .rating {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.hero-rating .stars{
+    font-size: 15px;
+    display: flex1;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #e50914;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn .fa-play{
+    margin-left: 10px;
+}
+
+
+/* Card Slider */
+.card-slider {
+    padding: 20px 50px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+}
+
+.card {
+    min-width: 300px;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
